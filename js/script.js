@@ -1,11 +1,15 @@
 var loaded = false;
 
 // Hamburger Menu
-
 $("#nav-icon").click(function () {
   $(this).toggleClass("open");
   $(".nav").toggleClass("open");
   $("body").toggleClass("fixed");
+});
+
+// Close menu when a link is clicked
+$(".nav li a").click(function () {
+  $("#nav-icon").click();
 });
 
 $(window).scroll(function () {
@@ -26,9 +30,9 @@ function activateSections() {
   });
 }
 
-//loading
+// Loading animation
 (function () {
-  const minLoadingTime = 500; //milliseconds
+  const minLoadingTime = 500; // milliseconds
   const readyTime = new Date();
 
   $(window).load(function () {
